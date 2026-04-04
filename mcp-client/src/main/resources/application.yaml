@@ -1,0 +1,27 @@
+server:
+  port: 8041
+
+spring:
+  application:
+    name: mcp-client-sse
+
+  ai:
+    ollama:
+      base-url: http://localhost:11434
+      chat:
+        options:
+          model: llama3.1
+
+    mcp:
+      client:
+        enabled: true
+        type: ASYNC
+        sse:
+          connections:
+            mcp-server-sse:
+              url: http://localhost:8040
+
+logging:
+  level:
+    org.springframework.ai.mcp: DEBUG
+    io.modelcontextprotocol: DEBUG

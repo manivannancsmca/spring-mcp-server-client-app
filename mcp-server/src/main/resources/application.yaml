@@ -1,0 +1,23 @@
+server:
+  port: 8040
+
+spring:
+  application:
+    name: mcp-server-sse
+
+  ai:
+    mcp:
+      server:
+        name: mcp-server-sse
+        version: 1.0.0
+        type: ASYNC
+
+logging:
+  level:
+    org.springframework.ai: DEBUG
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: mappings, health
